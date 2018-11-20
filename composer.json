@@ -1,0 +1,26 @@
+{
+    "name": "dnmvcs/fulltest",
+    "description": "Framework Start Template Project",
+    "type": "project",
+    "keywords": [
+        "framework",
+		"service"
+    ],
+    "homepage": "https://www.github.com/dvaknheo/DNMVCS-FullTest",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "davknheo",
+            "email": "85811616@qq.com"
+        }
+    ],
+    "scripts": {
+        "post-create-project-cmd": [
+            "DNMVCS\\ComposerScripts::PostCreateProject"
+        ]
+    },
+    "require": {
+        "php": ">=7.0.0",
+		"dnmvcs/framework":"1.0.*"
+	}
+}
