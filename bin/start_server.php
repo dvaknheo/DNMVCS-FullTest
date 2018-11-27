@@ -1,5 +1,17 @@
 <?php
-require(__DIR__.'/../DNMVCS/DNMVCS/DNMVCS.php');
+$IN_COMPOSER=false;
+
+$project_root=realpath(__DIR__.'/..');
+
+if($IN_COMPOSER){
+	require($project_root.'/vendor/autoload.php');
+}else{
+	if(basename($project_root)==='template'){
+		require($project_root.'/../../DNMVCS.php');
+	}else{
+		require($project_root.'/../DNMVCS.php');
+	}
+}
 
 $server=null;
 //$server=new swoole_http_server('0.0.0.0', 9528);
