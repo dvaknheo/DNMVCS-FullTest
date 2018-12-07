@@ -1,5 +1,5 @@
 404
-<?php if(DN::G()->isDev()){ ?>
+<?php if(DN::Developing()){ ?>
 <pre>
 <?php debug_print_backtrace(); ?>
 </pre>

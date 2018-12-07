@@ -6,11 +6,7 @@ $project_root=realpath(__DIR__.'/..');
 if($IN_COMPOSER){
 	require($project_root.'/vendor/autoload.php');
 }else{
-	if(basename($project_root)==='template'){
-		require($project_root.'/../../DNMVCS.php');
-	}else{
-		require($project_root.'/../DNMVCS.php');
-	}
+	require($project_root.'/../DNMVCS/DNMVCS.php');
 }
 
 $server=null;

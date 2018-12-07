@@ -1,6 +1,6 @@
 <?php use \DNMVCS\DNMVCS as DN ;?>
 500
-<?php if(DN::G()->isDev()){ ?>
+<?php if(DN::Developing()){ ?>
 <fieldset>
 	<legend>Error(<?=get_class($ex);?>:<?php echo($ex->getCode());?>)</legend>
 	<?php echo($ex->getMessage());?>
