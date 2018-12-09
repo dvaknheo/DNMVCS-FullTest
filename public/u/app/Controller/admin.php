@@ -27,7 +27,7 @@ class admin
 			'url_logout'=>'admin/logout',
 			'url_changepass'=>'admin/reset_password',
 		];
-		array_walk($data,function(&$v){return DN::URL($v);});
+		array_walk($data,function(&$v){$v=DN::URL($v);});
 		DN::G()->setViewWrapper('admin/inc_head','admin/inc_foot');
 		DN::G()->assignViewData($data);
 	}
