@@ -9,6 +9,7 @@ class App extends \DNMVCS\DNMVCS
 	public function init($options=[])
 	{
 		$options['ext']['use_strict_db_manager']=true;
+		$options['ext']['use_ext_db']=true;
 		parent::init($options);
 		DN::G()->assignRewrite([
 			'~article/(\d+)/?(\d+)?'=>'article/?id=$1&page=$2',

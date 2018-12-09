@@ -1,29 +1,12 @@
 <?php
 namespace MY\Controller;
 use DNMVCS\DNMVCS as DN;
+use DNMVCS\SuperGlobal as SG;
 use MY\Service as S;
 use MY\Service\SessionService;
 use MY\Service\ArticleService;
 use MY\Service\UserService;
-class FacadeRoot
-{
- public static function __callStatic($name, $arguments) 
-    {
-        // 注意: $name 的值区分大小写
-        echo "Calling static method '$name' "
-             . implode(', ', $arguments). "\n";
-			 var_dump(static::class);
-			 var_dump(get_called_class());
-			 debug_print_backtrace();
-    }
-}
-class JustFacade
-{
-	public static function Foo()
-	{
-		echo "Hit!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
-	}
-}
+
 class DNController
 {
 	public function __construct()
@@ -38,13 +21,13 @@ class DNController
 	}
 	public function i()
 	{
-		$t=$_SERVER;
+		$t=SG::G()->_SERVER;
 		ksort($t);
 		var_export($t);
 	}
 	public function index()
 	{
-		$page=intval($_GET['page']??1);
+		$page=intval(SG::G()->_GET['page']??1);
 		$page=($page>1)?:1;
 
 		$user=SessionService::G()->getCurrentUser();
@@ -66,8 +49,8 @@ class DNController
 		$user=SessionService::G()->getCurrentUser();
 		$params=DN::Parameters();
 		
-		$id=intval($_GET['id']??1);
-		$page=intval($_GET['page']??1);
+		$id=intval(SG::G()->_GET['id']??1);
+		$page=intval(SG::G()->_GET['page']??1);
 		$page=($page>1)?:1;
 		$page_size=10;
 		
@@ -82,47 +65,45 @@ class DNController
 	}
 	public function reg()
 	{
-debug_print_backtrace();		DN::G()->setViewWrapper('user/inc_head.php','user/inc_foot.php');
+		DN::G()->setViewWrapper('user/inc_head.php','user/inc_foot.php');
 		DN::Show(get_defined_vars(),'user/reg');
 	}
 	public function login()
 	{
-	var_dump("ssssssssssss");
-	debug_print_backtrace();
 		DN::G()->setViewWrapper('user/inc_head.php','user/inc_foot.php');
 		DN::Show(get_defined_vars(),'user/login');
 	}
 	public function logout()
 	{
 		SessionService::G()->logout();
-		DN::ExitRouteTo('/');
+		DN::ExitRouteTo('');
 	}
 	
 	public function do_reg()
 	{
-		$user=UserService::G()->reg($_POST['username'],$_POST['password']);
+		$user=UserService::G()->reg(SG::G()->_POST['username'],SG::G()->_POST['password']);
 		SessionService::G()->setCurrentUser($user);
-		DN::ExitRouteTo('/');
+		DN::ExitRouteTo('');
 	}
 	public function do_login()
 	{
-		$user=UserService::G()->login($_POST['username'],$_POST['password']);
+		$user=UserService::G()->login(SG::G()->_POST['username'],SG::G()->_POST['password']);
 		SessionService::G()->setCurrentUser($user);
 		
-		DN::ExitRouteTo('/');
+		DN::ExitRouteTo('');
 	}
 	public function do_addcomment()
 	{
 		$user=SessionService::G()->getCurrentUser();
-		UserService::G()->addComment($user['id'],$_POST['article_id'],$_POST['content']);
+		UserService::G()->addComment($user['id'],SG::G()->_POST['article_id'],SG::G()->_POST['content']);
 		
-		DN::ExitRouteTo('/');
+		DN::ExitRouteTo('');
 	}
 	public function do_delcomment()
 	{
 		$user=SessionService::G()->getCurrentUser();
-		UserService::G()->deleteCommentByUser($user['id'],$_POST['id']);
+		UserService::G()->deleteCommentByUser($user['id'],SG::G()->_POST['id']);
 		
-		DN::ExitRouteTo('/');
+		DN::ExitRouteTo('');
 	}
 }
