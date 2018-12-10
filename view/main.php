@@ -9,10 +9,13 @@ use DNMVCS\DNMVCS as DN;
 <div>
 Time Now is <?php echo $var;?>
 </div>
-<div>haha </div>
+<?php // co:sleep(3);?>
 <hr/>
 <?php DN::ShowBlock('inc-static');?>
 <?php DN::ShowBlock('inc-backtrace');?>
+
+<?php DN::ShowBlock('inc-superglobal');?>
+
 <?php DN::ShowBlock('inc-coroutine');?>
 
 </body>
