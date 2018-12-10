@@ -8,7 +8,7 @@ class App extends \DNMVCS\DNMVCS
 	public $is_stop=false;
 	public function init($options=[])
 	{
-		$options['ext']['use_strict_db_manager']=true;
+		//$options['ext']['use_strict_db_manager']=true;
 		$options['ext']['use_ext_db']=true;
 		parent::init($options);
 		DN::G()->assignRewrite([

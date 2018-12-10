@@ -36,7 +36,6 @@ class DNController
 	public function article()
 	{
 		$user=SessionService::G()->getCurrentUser();
-		$params=DN::Parameters();
 		
 		$id=intval(SG::G()->_GET['id']??1);
 		$page=intval(SG::G()->_GET['page']??1);
@@ -101,5 +100,18 @@ class DNController
 		$user=SessionService::G()->getCurrentUser();
 		UserService::G()->deleteCommentByUser($user['id'],SG::G()->_POST['id']);
 		DN::ExitRouteTo('');
+	}
+	public function dump()
+	{
+		$ret=[];
+		$tables=['Articles'];
+		foreach($tables as $table){
+			try{
+				$sql="SHOW CREATE TABLE $table";
+				$data=DN::DB()->fetch($sql);
+				$ret[$table]=$data['Create Table'];
+			}catch(\PDOException $ex){}
+		}
+		return $ret;
 	}
 }
