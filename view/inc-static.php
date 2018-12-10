@@ -60,14 +60,6 @@ onErrorException
 onDebugError
 onErrorHandle
 </pre>
-
-<!doctype html>
-<html>
-<body>
-<h1>Hello DNMVCS</h1>
-<div>
-Time Now is <?php echo $var;?>
-<div>
 <div>
 演示 G 函数
 </div>
@@ -88,13 +80,12 @@ Time Now is <?php echo $var;?>
 <li><a href="#">ThrowOn</a>
 <li><a href="#">H</a>
 <li><a href="#">Import</a>
-<li><a href="#">ImportSys</a>
+
 <li><a href="#">RecordsetH</a>
 <li><a href="#">RecordsetURL</a>
 <li><a href="#">assignRoute</a>
 <li><a href="#">setViewWrapper</a>
 <li><a href="#">assignViewData</a>
-<li><a href="#">showBlock</a>
 <li><a href="#">assignException</a>
 <li><a href="#">setDefaultExceptionHandel</a>
 <li><a href="#">onBeforeShow</a>
@@ -105,6 +96,3 @@ Time Now is <?php echo $var;?>
 <li><a href="#">onException</a>
 </ul>
 </fieldset>
-
-</body>
-</html>

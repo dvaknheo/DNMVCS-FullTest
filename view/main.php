@@ -9,9 +9,11 @@ use DNMVCS\DNMVCS as DN;
 <div>
 Time Now is <?php echo $var;?>
 </div>
-<div>For More Take the DNMVCS-FullTest (TODO)</div>
+<div>haha </div>
 <hr/>
-<?php DN::ShowBlock('inc-static',$this->data);
-?>
+<?php DN::ShowBlock('inc-static');?>
+<?php DN::ShowBlock('inc-backtrace');?>
+<?php DN::ShowBlock('inc-coroutine');?>
+
 </body>
 </html>
