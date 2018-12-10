@@ -1,14 +1,7 @@
 <?php
-$IN_COMPOSER=true;
+require(__DIR__.'/../boot/headfile.php');
 
 $project_root=realpath(__DIR__.'/..');
-
-if($IN_COMPOSER){
-	require($project_root.'/vendor/autoload.php');
-}else{
-	require($project_root.'/../DNMVCS.php');
-}
-
 
 $options=[
 	'path'=>$project_root,

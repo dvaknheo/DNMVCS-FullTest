@@ -73,7 +73,7 @@ class DNController
 		try{
 			$user=UserService::G()->reg(SG::G()->_POST['username'],SG::G()->_POST['password']);
 		}catch(DNException $ex){
-			DN::G()->assignViewData('error_info'=>$ex->getMessage());
+			DN::G()->assignViewData('error_info',$ex->getMessage());
 			return $this->reg();
 		}
 		SessionService::G()->setCurrentUser($user);
@@ -84,7 +84,7 @@ class DNController
 		try{
 			$user=UserService::G()->login(SG::G()->_POST['username'],SG::G()->_POST['password']);
 		}catch(DNException $ex){
-			DN::G()->assignViewData('error_info'=>$ex->getMessage());
+			DN::G()->assignViewData('error_info',$ex->getMessage());
 			return $this->login();
 		}
 		SessionService::G()->setCurrentUser($user);

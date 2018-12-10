@@ -1,20 +1,6 @@
 <?php
-$file=realpath(__DIR__.'/../../DNMVCS/DNMVCS.php');
-if(is_file($file)){
-	require $file;
-}else{
-////[[[[
-$IN_COMPOSER=true;
+require(__DIR__.'/../boot/headfile.php');
 
-$project_root=realpath(__DIR__.'/..');
-
-if($IN_COMPOSER){
-	require($project_root.'/vendor/autoload.php');
-}else{
-	require($project_root.'/../DNMVCS.php');
-}
-////]]]]
-}
 ////[[[[
 $path=realpath(__DIR__.'/../').'/';
 $server_options=[

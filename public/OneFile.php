@@ -1,19 +1,8 @@
 <?php
 use \DNMVCS\DNMVCS as DN;
-use \DNMVCS\FunctionWrapper as W;
+use \DNMVCS\SuperGlobal as SG;
+require(__DIR__.'/../boot/headfile.php');
 
-$IN_COMPOSER=true;
-
-$project_root=realpath(__DIR__.'/..');
-
-if($IN_COMPOSER){
-	require($project_root.'/vendor/autoload.php');
-}else{
-	require($project_root.'/../DNMVCS.php');
-}
-
-global $view_data;
-$view_data=[];
 /////////////////////
 function get_data()
 {

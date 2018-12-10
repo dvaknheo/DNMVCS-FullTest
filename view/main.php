@@ -13,6 +13,7 @@ Time Now is <?php echo $var;?>
 <hr/>
 <?php DN::ShowBlock('inc-static');?>
 <?php DN::ShowBlock('inc-backtrace');?>
+<?php DN::ShowBlock('inc-file');?>
 
 <?php DN::ShowBlock('inc-superglobal');?>
 
