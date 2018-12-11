@@ -1,4 +1,4 @@
-500
+出错了
 <fieldset>
 	<legend>Error(<?=get_class($ex);?>:<?php echo($ex->getCode());?>)</legend>
 	<?php echo($ex->getMessage());?>

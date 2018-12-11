@@ -101,17 +101,22 @@ class DNController
 		UserService::G()->deleteCommentByUser($user['id'],SG::G()->_POST['id']);
 		DN::ExitRouteTo('');
 	}
+	public function dump
 	public function dump()
 	{
+
 		$ret=[];
 		$tables=['Articles'];
 		foreach($tables as $table){
 			try{
 				$sql="SHOW CREATE TABLE $table";
 				$data=DN::DB()->fetch($sql);
-				$ret[$table]=$data['Create Table'];
+				$str=$data['Create Table'];
+				$str=preg_replace('/AUTO_INCREMENT=\d+/','AUTO_INCREMENT=1',$str);
+				$ret[$table]=$str;
 			}catch(\PDOException $ex){}
 		}
+		var_dump($ret);
 		return $ret;
 	}
 }
