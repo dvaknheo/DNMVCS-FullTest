@@ -101,7 +101,6 @@ class DNController
 		UserService::G()->deleteCommentByUser($user['id'],SG::G()->_POST['id']);
 		DN::ExitRouteTo('');
 	}
-	public function dump
 	public function dump()
 	{
 
