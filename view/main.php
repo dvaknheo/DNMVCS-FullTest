@@ -7,6 +7,8 @@ use DNMVCS\DNMVCS as DN;
 <body>
 <h1>Hello DNMVCS</h1>
 <div>
+欢迎使用 DNMVCS.
+<a href="/OneFile.php">“一个文件全部模式”</a>
 Time Now is <?php echo $var;?>
 </div>
 <?php // co:sleep(3);?>
