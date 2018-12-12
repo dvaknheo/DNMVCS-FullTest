@@ -1,24 +1,27 @@
 <?php
 use \DNMVCS\DNMVCS as DN;
 use \DNMVCS\SuperGlobal as SG;
+
 require(__DIR__.'/../boot/headfile.php');
 
+global $view_data;
+$view_data=[];
 /////////////////////
 function get_data()
 {
-	return isset($_SESSION['content'])?$_SESSION['content']:'';
+	return isset(SG::G()->_SESSION['content'])?SG::G()->_SESSION['content']:'';
 }
 function add_data($content)
 {
-	$_SESSION['content']=$content;
+	SG::G()->_SESSION['content']=$content;
 }
 function update_data($content)
 {
-	$_SESSION['content']=$content;
+	SG::G()->_SESSION['content']=$content;
 }
 function delete_data()
 {
-	unset($_SESSION['content']);
+	unset(SG::G()->_SESSION['content']);
 }
 /////////////
 function action_index()
@@ -27,7 +30,7 @@ function action_index()
 	$view_data['content']=nl2br(DN::H(get_data()));
 	$view_data['url_add']=DN::URL('add');
 	$view_data['url_edit']=DN::URL('edit');
-	$token=$_SESSION['token']=md5(mt_rand());
+	$token=SG::G()->_SESSION['token']=md5(mt_rand());
 	$view_data['url_del']=DN::URL('del?token='.$token);
 	
 }
@@ -48,27 +51,27 @@ function action_edit()
 }
 function action_del()
 {
-	$old_token=$_SESSION['token'];
-	$new_token=$_GET['token'];
+	$old_token=SG::G()->_SESSION['token'];
+	$new_token=SG::G()->_GET['token'];
 	$flag=($old_token==$new_token)?true:false;
 	if($flag){
-		unset($_SESSION['content']);
+		unset(SG::G()->_SESSION['content']);
 	}
-	unset($_SESSION['token']);
+	unset(SG::G()->_SESSION['token']);
 	$data['msg']=$flag?'':'验证失败';
 		$data['url_back']=DN::URL('');
 	DN::Show($data,'dialog');
 }
 function action_do_edit()
 {
-	update_data($_POST['content']);
+	update_data(SG::G()->_POST['content']);
 	$data=[];
 	$data['url_back']=DN::URL('');
 	DN::Show($data,'dialog');
 }
 function action_do_add()
 {
-	add_data($_POST['content']);
+	add_data(SG::G()->_POST['content']);
 	$data=[];
 	$data['url_back']=DN::URL('');
 	DN::Show($data,'dialog');
@@ -76,11 +79,14 @@ function action_do_add()
 function URL($url){return DN::URL($url);}
 function H($str){return DN::H($str);}
 ////////////////////////////////////
-session_start();
-$options=[
-	'path_view'=>'',
-];
-DN::RunOneFileMode($options);
+$options=[];
+if(defined('DNMVCS_WARNING_IN_TEMPLATE')){ echo "<div>Don't run the template file directly </div>"; }
+if(defined('DNMVCS_WARNING_IN_TEMPLATE')){ $options['setting_basename']=''; }
+DN::RunOneFileMode($options,function(){
+	SG::SetSessionName('MYSESS');
+	SG::StartSession();
+	}
+);
 
 if(!$view_data){return;} 
 extract($view_data);

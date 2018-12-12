@@ -23,23 +23,6 @@ DB_W()
 <pre>
 URL
 这是 URL
-
-Parameters( 实时显示)
-
-Setting();
-Config
-LoadConfig
-
-ExitJson
-ExitRedirect
-ExitRouteTo
-ThrowOn
-Import
-H
-RecordsetH
-
-RecordsetURL
-
 isDev
 assignRoute
 assignRewrite
@@ -60,39 +43,80 @@ onErrorException
 onDebugError
 onErrorHandle
 </pre>
-<div>
-演示 G 函数
-</div>
+
 <fieldset>
 <legend>常用静态方法</legend>
+<fieldset>
+<legend>显示</legend>
 <ul>
-<li><a href="#">G</a>
 <li><a href="#">Show</a>
-<li><a href="#">DB</a>
-<li><a href="#">DB_R</a>
-<li><a href="#">DB_W</a>
-<li><a href="#">Parameters</a>
-<li><a href="#">Setting</a>
-<li><a href="#">GetConfig</a>
-<li><a href="#">LoadConfig</a>
-<li><a href="#">ExitJson</a>
-<li><a href="#">ExitRedirect</a>
-<li><a href="#">ThrowOn</a>
-<li><a href="#">H</a>
-<li><a href="#">Import</a>
-
-<li><a href="#">RecordsetH</a>
-<li><a href="#">RecordsetURL</a>
-<li><a href="#">assignRoute</a>
-<li><a href="#">setViewWrapper</a>
-<li><a href="#">assignViewData</a>
-<li><a href="#">assignException</a>
-<li><a href="#">setDefaultExceptionHandel</a>
-<li><a href="#">onBeforeShow</a>
-<li><a href="#">onShow404</a>
-<li><a href="#">onException</a>
-<li><a href="#">onErrorException</a>
-<li><a href="#">onErrorHandel</a>
-<li><a href="#">onException</a>
+<li><a href="#">ShowBlock</a>
 </ul>
+</fieldset>
+<fieldset>
+<legend>URL 相关</legend>
+<ul>
+<li><a href="#">URL</a>
+<li><a href="#">Parameters</a>
+</ul>
+</fieldset>
+<fieldset>
+<legend>配置</legend>
+<ul>
+<li><a href="#">Setting</a>
+<li><a href="#">Config</a>
+<li><a href="#">LoadConfig</a>
+</ul>
+</fieldset>
+
+<fieldset>
+<legend>跳转</legend>
+<ul>
+<li><a href="#">ExitJson</a>
+<li><a href="#">ExitRouteTo</a>
+<li><a href="#">ExitRedirect</a>
+<li><a href="#">Exit404</a>
+</ul>
+</fieldset>
+<fieldset>
+<legend>异常</legend>
+<ul>
+<li><a href="#">ThrowOn</a>
+</ul>
+</fieldset>
+<fieldset>
+<legend>状态</legend>
+<ul>
+<li><a href="#">Developing</a>
+<li><a href="#">InSwoole</a>
+<li><a href="#">IsRunning</a>
+</ul>
+</fieldset>
+<fieldset>
+<legend>杂项</legend>
+<ul>
+<li><a href="#">H</a>
+<li><a href="#">RecordsetUrl</a>
+<li><a href="#">RecordsetH</a>
+<li><a href="#">Import</a>
+<li><a href="#">RecordsetH</a>
+<li><a href="#">HasInclude</a>
+<li><a href="#">DI</a>
+</ul>
+</fieldset>
+<fieldset>
+<legend>运行方式</legend>
+<ul>
+<li><a href="#">RunQuickly</a>
+<li><a href="#">RunWithoutPathInfo</a>
+<li><a href="#">RunOneFileMode</a>
+<li><a href="#">RunAsServer</a>
+</ul>
+</fieldset>
+
+</fieldset>
+
+<fieldset>
+<legend>动态方法</legend>
+
 </fieldset>
