@@ -9,6 +9,8 @@ use DNMVCS\DNMVCS as DN;
 <div>
 欢迎使用 DNMVCS.
 <a href="/OneFile.php">“一个文件全部模式”</a>
+路由方式，子目录的路由
+
 Time Now is <?php echo $var;?>
 </div>
 <?php // co:sleep(3);?>
