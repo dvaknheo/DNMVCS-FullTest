@@ -1,5 +1,5 @@
 <?php
-require(__DIR__.'/../boot/headfile.php');
+require(__DIR__.'/../headfile/headfile.php');
 
 $project_root=realpath(__DIR__.'/..');
 

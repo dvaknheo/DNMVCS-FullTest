@@ -2,7 +2,7 @@
 use \DNMVCS\DNMVCS as DN;
 use \DNMVCS\SuperGlobal as SG;
 
-require(__DIR__.'/../boot/headfile.php');
+require(__DIR__.'/../headfile/headfile.php');
 
 global $view_data;
 $view_data=[];
