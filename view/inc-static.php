@@ -11,38 +11,6 @@ init
 run
 都已经生效了。
 </pre>
-<pre>
-静态方法 Show 已经OK
-</pre>
-<pre>
-DB()
-DB_R()
-DB_W()
-请见数据库相关页面
-</pre>
-<pre>
-URL
-这是 URL
-isDev
-assignRoute
-assignRewrite
-getRouteCallingMethod
-setViewWrapper
-assignViewData
-showBlock
-assignExceptionHandle
-addRouteHook
-setDefaultExceptionHandle
-assignPathNamespace
-setBeforeRunHandler
-
-onBeforeShow
-onShow404
-onException
-onErrorException
-onDebugError
-onErrorHandle
-</pre>
 
 <fieldset>
 <legend>常用静态方法</legend>
@@ -85,6 +53,14 @@ onErrorHandle
 </ul>
 </fieldset>
 <fieldset>
+<legend>数据库</legend>
+<ul>
+<li><a href="#">DB</a>
+<li><a href="#">DB_W</a>
+<li><a href="#">DB_R</a>
+</ul>
+</fieldset>
+<fieldset>
 <legend>状态</legend>
 <ul>
 <li><a href="#">Developing</a>
@@ -113,10 +89,5 @@ onErrorHandle
 <li><a href="#">RunAsServer</a>
 </ul>
 </fieldset>
-
-</fieldset>
-
-<fieldset>
-<legend>动态方法</legend>
 
 </fieldset>

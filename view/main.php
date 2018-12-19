@@ -13,7 +13,8 @@ Time Now is <?php echo $var;?>
 </div>
 <?php // co:sleep(3);?>
 <hr/>
-<?php DN::ShowBlock('inc-static');?>
+<?php DN::ShowBlock('inc-static.php');?>
+<?php DN::ShowBlock('inc-function.php');?>
 <?php DN::ShowBlock('inc-backtrace');?>
 <?php DN::ShowBlock('inc-file');?>
 
