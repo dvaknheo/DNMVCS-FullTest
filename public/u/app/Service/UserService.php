@@ -10,6 +10,7 @@ use MY\Model\CommentModel;
 class UserService
 {
 	use \DNMVCS\DNSingleton;
+	
 	public function reg($username,$password)
 	{		
 		$user=UserModel::G()->getUserByName($username);

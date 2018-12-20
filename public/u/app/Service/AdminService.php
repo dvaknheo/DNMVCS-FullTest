@@ -3,8 +3,10 @@ namespace MY\Service;
 use DNMVCS as DN;
 use MY\Model as M;
 
-class AdminService extends DN\DNService
+class AdminService
 {
+	use \DNMVCS\DNSingleton;
+
 	public function reset()
 	{
 		$password=mt_rand(100000,999999);

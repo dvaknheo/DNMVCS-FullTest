@@ -2,8 +2,10 @@
 namespace MY\Model;
 use \DNMVCS\DNMVCS as DN;
 
-class BaseModel extends \DNMVCS\DNModel
+class BaseModel
 {
+	use \DNMVCS\DNSingleton;
+
 	public $table_name=null;
 	public function getList(int $page=1,int $page_size=10){
 		$start=$page-1;

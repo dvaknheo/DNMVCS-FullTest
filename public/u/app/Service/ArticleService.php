@@ -3,8 +3,10 @@ namespace MY\Service;
 use DNMVCS as DN;
 use MY\Model as M;
 
-class ArticleService extends DN\DNService
+class ArticleService
 {
+	use \DNMVCS\DNSingleton;
+
 	public function getRecentArticle()
 	{
 		$ret=M\ArticleModel::G()->getList(1,10);

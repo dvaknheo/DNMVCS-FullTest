@@ -3,8 +3,9 @@ namespace MY\Service;
 use DNMVCS as DN;
 use MY\Model as M;
 
-class SessionService extends DN\DNService
+class SessionService
 {
+	use \DNMVCS\DNSingleton;
 	// 注意这里是有状态的，和其他 Service 不同。
 	// 属于特殊的 Service
 	public function __construct()
