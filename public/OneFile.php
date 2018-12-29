@@ -7,8 +7,7 @@ require(__DIR__.'/../headfile/headfile.php');
 global $view_data;
 $view_data=[];
 /////////////////////
-class MyService
-{
+
 function get_data()
 {
 	return isset(SG::G()->_SESSION['content'])?SG::G()->_SESSION['content']:'';
