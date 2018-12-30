@@ -25,7 +25,10 @@ function delete_data()
 	unset(SG::G()->_SESSION['content']);
 }
 /////////////
-function action_index()
+class DNController
+{
+//m=abc & a=x
+function index()
 {
 	global $view_data;
 	$view_data['content']=nl2br(DN::H(get_data()));
@@ -35,14 +38,14 @@ function action_index()
 	$view_data['url_del']=DN::URL('del?token='.$token);
 	
 }
-function action_add()
+function add()
 {
 	$data=['x'=>'add'];
 	
 	DN::Show($data);
 	//view_add($data);
 }
-function action_edit()
+function edit()
 {
 	$data=['x'=>'add'];
 	$data['content']=DN::H(get_data());
@@ -50,7 +53,7 @@ function action_edit()
 	DN::Show($data);
 
 }
-function action_del()
+function del()
 {
 	$old_token=SG::G()->_SESSION['token'];
 	$new_token=SG::G()->_GET['token'];
@@ -63,14 +66,14 @@ function action_del()
 		$data['url_back']=DN::URL('');
 	DN::Show($data,'dialog');
 }
-function action_do_edit()
+function do_edit()
 {
 	update_data(SG::G()->_POST['content']);
 	$data=[];
 	$data['url_back']=DN::URL('');
 	DN::Show($data,'dialog');
 }
-function action_do_add()
+function do_add()
 {
 	add_data(SG::G()->_POST['content']);
 
@@ -78,16 +81,21 @@ function action_do_add()
 	$data['url_back']=DN::URL('');
 	DN::Show($data,'dialog');
 }
+}
 function URL($url){return DN::URL($url);}
 function H($str){return DN::H($str);}
 ////////////////////////////////////
 $options=[
 	'is_dev'=>true,
-	
+	'ext'=>[
+		//''=>'',
+	]
 ];
 if(defined('DNMVCS_WARNING_IN_TEMPLATE')){ echo "<div>Don't run the template file directly </div>"; }
 if(defined('DNMVCS_WARNING_IN_TEMPLATE')){ $options['setting_basename']=''; }
-DN::RunOneFileMode($options);
+DN::RunOneFileMode($options,function(){
+	//\DNMVCS\FunctionDispatcher::G()->prefix="action/";
+});
 
 
 if(!$view_data){return;} 
