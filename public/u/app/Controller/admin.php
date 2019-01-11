@@ -131,6 +131,12 @@ class admin
 		$page=intval($_GET['page']??1);
 		$page=($page>1)?:1;
 		list($list,$total)=AdminService::G()->getLogList($page);
+		
+		$list=DN::RecordsetURL($list,[
+			'url_edit'=>'admin/article_edit?id={id}',
+			'url_delete'=>'admin/article_delete?id={id}',
+		]);
+		
 		DN::Show(get_defined_vars());
 	}
 	public function comments()

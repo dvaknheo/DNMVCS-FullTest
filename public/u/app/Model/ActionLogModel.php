@@ -2,11 +2,12 @@
 namespace MY\Model;
 use DNMVCS\DNMVCS as DN;
 
-class ActionLogModel extends \DNMVCS\DNModel
+class ActionLogModel
 {
+	use \DNMVCS\DNSingleton;
 	public function log($action,$type='')
 	{
-		DN::DB()->insert('ActionLogs',['contents'=>$action,'type'=>$type,'created_at'=>date('Y-m-d H:i:s')]);
+		DN::DB()->insertData('ActionLogs',['contents'=>$action,'type'=>$type,'created_at'=>date('Y-m-d H:i:s')]);
 	}
 	public function get($id)
 	{
