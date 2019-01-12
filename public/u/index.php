@@ -11,5 +11,5 @@ $options=[
 \DNMVCS\DNMVCS::RunQuickly($options);
 
 ?>
-<a href="one.php">无缝切换到无 path_info 方式</a>
+<a href="/u/one.php">无缝切换到无 path_info 方式</a>
 
