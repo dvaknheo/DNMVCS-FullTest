@@ -1,7 +1,6 @@
 <?php
 namespace MY\Controller;
 use DNMVCS\DNMVCS as DN;
-use DNMVCS\SuperGlobal as SG;
 use DNMVCS\Pager;
 use DNMVCS\DNException;
 
@@ -16,7 +15,7 @@ class DNController
 	}
 	public function index()
 	{
-		$page=intval(SG::G()->_GET['page']??1);
+		$page=intval(DN::SG()->_GET['page']??1);
 		$page=($page>1)?:1;
 
 		$user=SessionService::G()->getCurrentUser();
@@ -37,8 +36,8 @@ class DNController
 	{
 		$user=SessionService::G()->getCurrentUser();
 		
-		$id=intval(SG::G()->_GET['id']??1);
-		$page=intval(SG::G()->_GET['page']??1);
+		$id=intval(DN::SG()->_GET['id']??1);
+		$page=intval(DN::SG()->_GET['page']??1);
 		$page=($page>1)?:1;
 		$page_size=10;
 		
@@ -70,7 +69,7 @@ class DNController
 	public function do_reg()
 	{
 		try{
-			$user=UserService::G()->reg(SG::G()->_POST['username'],SG::G()->_POST['password']);
+			$user=UserService::G()->reg(DN::SG()->_POST['username'],DN::SG()->_POST['password']);
 		}catch(DNException $ex){
 			DN::G()->assignViewData('error_info',$ex->getMessage());
 			return $this->reg();
@@ -81,7 +80,7 @@ class DNController
 	public function do_login()
 	{
 		try{
-			$user=UserService::G()->login(SG::G()->_POST['username'],SG::G()->_POST['password']);
+			$user=UserService::G()->login(DN::SG()->_POST['username'],DN::SG()->_POST['password']);
 		}catch(DNException $ex){
 			DN::G()->assignViewData('error_info',$ex->getMessage());
 			return $this->login();
@@ -92,13 +91,13 @@ class DNController
 	public function do_addcomment()
 	{
 		$user=SessionService::G()->getCurrentUser();
-		UserService::G()->addComment($user['id'],SG::G()->_POST['article_id'],SG::G()->_POST['content']);
+		UserService::G()->addComment($user['id'],DN::SG()->_POST['article_id'],DN::SG()->_POST['content']);
 		DN::ExitRouteTo('');
 	}
 	public function do_delcomment()
 	{
 		$user=SessionService::G()->getCurrentUser();
-		UserService::G()->deleteCommentByUser($user['id'],SG::G()->_POST['id']);
+		UserService::G()->deleteCommentByUser($user['id'],DN::SG()->_POST['id']);
 		DN::ExitRouteTo('');
 	}
 	public function dump()
