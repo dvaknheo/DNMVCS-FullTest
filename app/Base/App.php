@@ -4,8 +4,11 @@ class App extends \DNMVCS\DNMVCS
 {
 	public function init($options=array())
 	{
-		$options['ext']['use_strict_db_manager']=true;
+		$options['ext']['use_strict_db']=true;
 		$options['ext']['use_facade']=true;
+		$options['ext']['facade_map']=[
+			'MY\Service\TestService'=>'MY\Service\DebugService',
+		];
 		parent::init($options);
 		return $this;
 	}
