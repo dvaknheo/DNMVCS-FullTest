@@ -20,6 +20,6 @@ if(is_file($setting_file)){
 	$setting=include($setting_file);
 }
 $server_options=array_replace_recursive($server_options,$setting['server_options']??[]);
-
+$server_options['port']=$_SERVER['argv'][1])??$server_options['port'];
 $server=null;
 \DNMVCS\DNMVCS::RunAsServer($server_options,$dn_options,$server);

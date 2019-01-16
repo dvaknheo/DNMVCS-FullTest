@@ -8,7 +8,7 @@ use MY\Service\SessionService;
 use MY\Service\ArticleService;
 use MY\Service\UserService;
 
-class DNController
+class Main
 {
 	public function __construct()
 	{

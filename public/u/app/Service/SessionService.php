@@ -1,6 +1,6 @@
 <?php
 namespace MY\Service;
-use DNMVCS as DN;
+use \DNMVCS\DNMVCS as DN;
 use MY\Model as M;
 
 class SessionService
@@ -10,8 +10,7 @@ class SessionService
 	// 属于特殊的 Service
 	public function __construct()
 	{
-		session_name('dnfull');
-		session_start();	
+		DN::session_start();
 	}
 	public function getCurrentUser()
 	{

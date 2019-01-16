@@ -1,6 +1,9 @@
 <?php
 $IN_COMPOSER=false;
-
+if(defined('HEAD_FILE_LOADED')){
+	return;
+}
+define('HEAD_FILE_LOADED',true);
 if(!$IN_COMPOSER){
 	$file=realpath(__DIR__.'/../../DNMVCS.php');
 	if(is_file($file)){
