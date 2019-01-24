@@ -2,7 +2,7 @@
 namespace MY\Base;
 use \DNMVCS\DNMVCS as DN;
 
-class App extends \DNMVCS\DNMVCS
+class AppEx extends \DNMVCS\DNMVCS
 {
 	public $NO_SETTING=false;
 	public $is_stop=false;

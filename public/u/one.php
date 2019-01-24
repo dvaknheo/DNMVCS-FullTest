@@ -13,3 +13,13 @@ $options=[
 	]
 ];
 \DNMVCS\DNMVCS::RunQuickly($options);
+
+$url="one.php/aaa/bbb/cc?module=xx&act=y&c=e";
+
+// article/1 => article?id=1;
+
+// dir/aa.php/dd/az.php/z?module=zz&act=z&args=zxvf
+
+?>
+
+<?=$url?> => <?= \DNMVCS\DNMVCS::URL($url);?>
