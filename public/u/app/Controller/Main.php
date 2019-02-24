@@ -1,12 +1,12 @@
 <?php
-namespace MY\Controller;
+namespace UUU\Controller;
 use DNMVCS\DNMVCS as DN;
 use DNMVCS\Pager;
 use DNMVCS\DNException;
 
-use MY\Service\SessionService;
-use MY\Service\ArticleService;
-use MY\Service\UserService;
+use UUU\Service\SessionService;
+use UUU\Service\ArticleService;
+use UUU\Service\UserService;
 
 class Main
 {
@@ -15,6 +15,7 @@ class Main
 	}
 	public function index()
 	{
+//\DNMVCS\SwooleCoroutineSingleton::Dump();
 		$page=intval(DN::SG()->_GET['page']??1);
 		$page=($page>1)?:1;
 

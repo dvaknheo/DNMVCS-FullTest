@@ -24,6 +24,7 @@
     },
     "require": {
         "php": ">=7.0.0",
+		"zendframework/zend-validator" : "2.12.0",
 		"dnmvcs/framework":"1.0.3"
 	}
 }

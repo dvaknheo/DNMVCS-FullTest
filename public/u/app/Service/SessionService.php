@@ -1,7 +1,7 @@
 <?php
-namespace MY\Service;
+namespace UUU\Service;
 use \DNMVCS\DNMVCS as DN;
-use MY\Model as M;
+use UUU\Model as M;
 
 class SessionService
 {

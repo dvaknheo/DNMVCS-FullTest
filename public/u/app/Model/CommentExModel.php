@@ -1,5 +1,5 @@
 <?php
-namespace MY\Model;
+namespace UUU\Model;
 use \DNMVCS\DNMVCS as DN;
 
 //开发人员备注，这个表和

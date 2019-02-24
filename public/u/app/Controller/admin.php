@@ -1,9 +1,9 @@
 <?php
 use \DNMVCS\DNMVCS as DN;
-use MY\Service as S;
-use MY\Service\AdminService;
-use MY\Service\SessionService;
-use MY\Service\ArticleService;
+use UUU\Service as S;
+use UUU\Service\AdminService;
+use UUU\Service\SessionService;
+use UUU\Service\ArticleService;
 
 class admin
 {

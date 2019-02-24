@@ -6,16 +6,20 @@ require(__DIR__.'/../../headfile/headfile.php');
 
 $options=[
 	'path'=>__DIR__,
+	'namespace'=>'UUU',
 	'path_controller'=>'app/Controller',
 	'path_view'=>'app/view',
 	'path_config'=>'app/config',
 	'path_lib'=>'app/lib',
-	'ext'=>['x'=>'z'],
+	//'ext'=>['x'=>'z'],
 	'base_class'=>'Base\AppEx',
 	
 ];
-var_dump("111~");
 \DNMVCS\DNMVCS::RunQuickly($options);
+return;
+var_dump(\DNMVCS\DNMVCS::SG()->_GET);
+var_dump(DATE(DATE_ATOM));return;
+
 var_dump("22222222~");
 
 $old_url="a/b?g=aaaaa";

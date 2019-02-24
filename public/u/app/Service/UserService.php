@@ -1,11 +1,11 @@
 <?php
 namespace MY\Service;
 use DNMVCS\DNMVCS as DN;
-use MY\Model as M;
-use MY\Model\ActionLogModel;
-use MY\UserException;
-use MY\Model\UserModel;
-use MY\Model\CommentModel;
+use UUU\Model as M;
+use UUU\Model\ActionLogModel;
+use UUU\UserException;
+use UUU\Model\UserModel;
+use UUU\Model\CommentModel;
 
 class UserService
 {

@@ -1,5 +1,5 @@
 <?php
-namespace MY\Base;
+namespace UUU\Base;
 use \DNMVCS\DNMVCS as DN;
 
 class AppEx extends \DNMVCS\DNMVCS
@@ -23,7 +23,8 @@ class AppEx extends \DNMVCS\DNMVCS
 	}
 	public function run()
 	{
-		if($this->is_stop){return;}
+var_dump(md5(spl_object_hash(static::SG())));
+var_dump(static::SG()->_SERVER['SCRIPT_FILENAME']);
 		return parent::run();
 	}
 

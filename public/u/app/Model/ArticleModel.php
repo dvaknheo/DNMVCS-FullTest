@@ -1,5 +1,5 @@
 <?php
-namespace MY\Model;
+namespace UUU\Model;
 
 class ArticleModel extends BaseModel
 {

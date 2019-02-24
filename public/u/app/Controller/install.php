@@ -1,5 +1,5 @@
 <?php
-namespace MY\Controller;
+namespace UUU\Controller;
 
 class install
 {

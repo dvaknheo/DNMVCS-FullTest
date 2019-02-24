@@ -1,5 +1,5 @@
 <?php
-namespace MY\Base;
+namespace UUU\Base;
 use \DNMVCS\DNMVCS as DN;
 
 class App extends \DNMVCS\DNMVCS
