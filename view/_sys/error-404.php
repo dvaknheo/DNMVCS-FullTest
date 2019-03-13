@@ -1,5 +1,6 @@
 <?php use \DNMVCS\DNMVCS as DN ?>
-404 111111111111
+<h1>DNMVCS_FullTest - 404</h1>
+<?php var_dump(DN::SG());?>
 <?php if(DN::Developing()){ ?>
 Developing!
 <pre>
