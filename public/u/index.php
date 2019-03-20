@@ -1,4 +1,5 @@
 <?php
+use \DNMVCS\DNMVCS as DN;
 //var_dump("OK");exit;
 //require('inc.php');return;
 //chdir(__DIR__);
@@ -15,7 +16,26 @@ $options=[
 	'base_class'=>'Base\AppEx',
 	
 ];
-\DNMVCS\DNMVCS::RunQuickly($options);
+try{
+echo "aa\n\nn\n\n\<hr />\n\n\n";
+echo DNMVCS\SwooleCoroutineSingleton::_DumpString();
+echo md5(spl_object_hash(DN::G()));
+
+echo "bbb<hr />\n";
+
+DN::G()->init($options);
+echo md5(spl_object_hash(DN::G()));
+
+echo " ccc<hr />\n";
+
+DN::G()->run();
+echo "ddd<hr />\n";
+
+}catch(\Throwable $ex){
+var_dump($ex);
+}
+echo "bb";
+
 return;
 var_dump(\DNMVCS\DNMVCS::SG()->_GET);
 var_dump(DATE(DATE_ATOM));return;

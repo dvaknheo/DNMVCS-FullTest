@@ -18,14 +18,14 @@ class AppEx extends \DNMVCS\DNMVCS
 		DN::G()->assignRoute([
 			'~abc(\d*)'=>function($x){var_dump("work",$x);},
 		]);
-
+		var_dump("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh {$this->path} hhhhhhhhhhhhhhhhhhhhh");
 		return $this;
 	}
-	public function run()
+	public function run($xx=false)
 	{
 var_dump(md5(spl_object_hash(static::SG())));
 var_dump(static::SG()->_SERVER['SCRIPT_FILENAME']);
-		return parent::run();
+		return parent::run($xx);
 	}
 
 }

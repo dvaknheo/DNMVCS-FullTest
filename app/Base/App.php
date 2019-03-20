@@ -4,6 +4,7 @@ class App extends \DNMVCS\DNMVCS
 {
 	public function init($options=array())
 	{
+		//\DNMVCS\DNSwooleExt::Server(\DNMVCS\SwooleHttpd::G());
 		$options['ext']['use_strict_db']=true;
 		$options['ext']['use_facade']=true;
 		$options['ext']['facade_map']=[
