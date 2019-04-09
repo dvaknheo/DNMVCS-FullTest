@@ -15,12 +15,12 @@ if(is_file($file)){
 	require($file);
 	return;
 }
-$file=realpath(__DIR__.'/../../DNMVCS/DNMVCS.php');
+$file=realpath(__DIR__.'/../../DNMVCS/autoload.php');
 if(!is_file($file)){
 	exit("Can't found DNMVCS.php -- By ".__FILE__);
 }
 require($file);
-$file=realpath(__DIR__.'/../../SwooleHttpd/src/SwooleHttpd.php');
+$file=realpath(__DIR__.'/../../SwooleHttpd/autoload.php');
 if(is_file($file)){
 	require($file);
 }

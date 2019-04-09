@@ -6,7 +6,6 @@ require(__DIR__.'/../headfile/headfile.php');
 global $view_data;
 $view_data=[];
 /////////////////////
-
 function get_data()
 {
 	return isset(DN::SG()->_SESSION['content'])?DN::SG()->_SESSION['content']:'';
@@ -24,10 +23,7 @@ function delete_data()
 	unset(DN::SG()->_SESSION['content']);
 }
 /////////////
-class DNController
-{
-//m=abc & a=x
-function index()
+function action_index()
 {
 	global $view_data;
 	$view_data['content']=nl2br(DN::H(get_data()));
@@ -37,14 +33,14 @@ function index()
 	$view_data['url_del']=DN::URL('del?token='.$token);
 	
 }
-function add()
+function action_add()
 {
 	$data=['x'=>'add'];
 	
 	DN::Show($data);
 	//view_add($data);
 }
-function edit()
+function action_edit()
 {
 	$data=['x'=>'add'];
 	$data['content']=DN::H(get_data());
@@ -52,7 +48,7 @@ function edit()
 	DN::Show($data);
 
 }
-function del()
+function action_del()
 {
 	$old_token=DN::SG()->_SESSION['token'];
 	$new_token=DN::SG()->_GET['token'];
@@ -62,38 +58,33 @@ function del()
 	}
 	unset(DN::SG()->_SESSION['token']);
 	$data['msg']=$flag?'':'验证失败';
-		$data['url_back']=DN::URL('');
+	$data['url_back']=DN::URL('');
+	
 	DN::Show($data,'dialog');
 }
-function do_edit()
+function action_do_edit()
 {
 	update_data(DN::SG()->_POST['content']);
 	$data=[];
 	$data['url_back']=DN::URL('');
 	DN::Show($data,'dialog');
 }
-function do_add()
+function action_do_add()
 {
 	add_data(DN::SG()->_POST['content']);
-
 	$data=[];
 	$data['url_back']=DN::URL('');
 	DN::Show($data,'dialog');
 }
-}
 function URL($url){return DN::URL($url);}
 function H($str){return DN::H($str);}
 ////////////////////////////////////
-$options=[
-	'is_dev'=>true,
-	'ext'=>[
-		//''=>'',
-	]
-];
+$options=[];
 if(defined('DNMVCS_WARNING_IN_TEMPLATE')){ echo "<div>Don't run the template file directly </div>"; }
-if(defined('DNMVCS_WARNING_IN_TEMPLATE')){ $options['setting_basename']=''; }
-DN::RunOneFileMode($options);
+if(defined('DNMVCS_WARNING_IN_TEMPLATE')){ $options['setting_file_basename']=''; }
+if(defined('DNMVCS_WARNING_IN_TEMPLATE')){ $options['is_dev']=true; }
 
+DN::RunOneFileMode($options);
 
 if(!$view_data){return;} 
 extract($view_data);
@@ -103,10 +94,10 @@ function view_header($view_data=[]){ extract($view_data);
 <!doctype html>
 <html>
  <meta charset="UTF-8">
-<head><title>DNMVC 单一页面演示</title></head>
+<head><title>DNMVCS 单一页面演示</title></head>
 <body>
 <fieldset>
-	<legend>DNMVC 单一页面演示</legend>
+	<legend>DNMVCS 单一页面演示</legend>
 	<div style="border:1px red solid;">
 <?php
 }

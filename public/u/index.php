@@ -18,7 +18,6 @@ $options=[
 ];
 try{
 echo "aa\n\nn\n\n\<hr />\n\n\n";
-echo DNMVCS\SwooleCoroutineSingleton::_DumpString();
 echo md5(spl_object_hash(DN::G()));
 
 echo "bbb<hr />\n";
