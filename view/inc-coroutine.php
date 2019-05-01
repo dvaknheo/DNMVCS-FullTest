@@ -1,8 +1,8 @@
 <fieldset>
 <legend>协程单例列表</legend>
-<?php if(DNMVCS\DNMVCS::InSwoole()){?>
+<?php if(false){?>
 <pre>
-<?= \DNMVCS\SwooleCoroutineSingleton::DumpString();?>
+<?= \SwooleHttpd\SwooleCoroutineSingleton::DumpString();?>
 </pre>
 <?php }else{?>
 非 swoole 环境无协程单例。

@@ -15,7 +15,6 @@ class Main
 	}
 	public function index()
 	{
-//\DNMVCS\SwooleCoroutineSingleton::Dump();
 		$page=intval(DN::SG()->_GET['page']??1);
 		$page=($page>1)?:1;
 

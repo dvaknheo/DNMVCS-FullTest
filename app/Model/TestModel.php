@@ -1,11 +1,9 @@
 <?php
 namespace MY\Model;
-use DNMVCS as DN;
+use MY\Base\Model;
 
-class TestModel
+class TestModel extends Model
 {
-    use \DNMVCS\DNSingleton;
-
 	public function foo()
 	{
 		return DATE(DATE_ATOM);

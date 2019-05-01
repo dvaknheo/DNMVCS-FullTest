@@ -6,7 +6,7 @@ class AppEx extends \DNMVCS\DNMVCS
 {
 	public $NO_SETTING=false;
 	public $is_stop=false;
-	public function init($options=[])
+	public function init($options=[],$context=null)
 	{
 		//$options['ext']['use_strict_db_manager']=true;
 		$options['ext']['use_ext_db']=true;
@@ -21,7 +21,7 @@ class AppEx extends \DNMVCS\DNMVCS
 		var_dump("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh {$this->path} hhhhhhhhhhhhhhhhhhhhh");
 		return $this;
 	}
-	public function run($xx=false)
+	public function run()
 	{
 var_dump(md5(spl_object_hash(static::SG())));
 var_dump(static::SG()->_SERVER['SCRIPT_FILENAME']);

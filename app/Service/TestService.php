@@ -1,9 +1,9 @@
 <?php
 namespace MY\Service;
-use \DNMVCS\DNMVCS as DN;
+use MY\Base\Service;
 use MY\Model as M;
 
-class TestService
+class TestService extends Service
 {
 	use \DNMVCS\DNSingleton;
 

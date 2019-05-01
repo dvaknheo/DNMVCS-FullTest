@@ -1,5 +1,5 @@
 <?php use \DNMVCS\DNMVCS as DN ;?>
-<?php if(DN::Developing()){ ?>
+<?php if(DN::IsDebug()){ ?>
 <fieldset>
 	<legend>Exception(<?=get_class($ex);?>:<?php echo($ex->getCode());?>)</legend>
 	<?php echo($ex->getMessage());?>

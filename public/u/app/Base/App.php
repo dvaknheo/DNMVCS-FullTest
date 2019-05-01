@@ -4,18 +4,17 @@ use \DNMVCS\DNMVCS as DN;
 
 class App extends \DNMVCS\DNMVCS
 {
-	public $NO_SETTING=false;
-	public $is_stop=false;
-	public function init($options=[])
+	public function init($options=[],$context=null)
 	{
 		//$options['ext']['use_strict_db_manager']=true;
-		$options['ext']['use_ext_db']=true;
-		parent::init($options);
-		DN::G()->assignRewrite([
+		//$options['ext']['use_ext_db']=true;
+		parent::init($options,$context);
+        
+		$this->assignRewrite([
 			'~article/(\d+)/?(\d+)?'=>'article?id=$1&page=$2',
 		]);
 		
-		DN::G()->assignRoute([
+		$this->assignRoute([
 			'~abc(\d*)'=>function($x){var_dump("work",$x);},
 		]);
 
@@ -23,7 +22,6 @@ class App extends \DNMVCS\DNMVCS
 	}
 	public function run()
 	{
-		if($this->is_stop){return;}
 		return parent::run();
 	}
 
