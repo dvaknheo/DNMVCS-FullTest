@@ -13,3 +13,5 @@ $options=[
 \DNMVCS\DNMVCS::RunQuickly($options);
 
 //$b=get_declared_classes();var_dump(array_values(array_diff($b,$a)));
+
+var_export(\DNMVCS\DNMVCS::G()->options);
