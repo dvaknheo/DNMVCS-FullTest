@@ -1,12 +1,10 @@
 <?php
 namespace MY\Service;
-use MY\Base\Service;
+use MY\Base\BaseService;
 use MY\Model as M;
 
-class TestService extends Service
+class TestService extends BaseService
 {
-	use \DNMVCS\DNSingleton;
-
 	public function foo()
 	{
 		return M\TestModel::G()->foo();

@@ -1,7 +1,9 @@
 <?php
+use DNMVCS\Basic\SingletonEx;
+
 class MiscService
 {
-    use \DNMVCS\DNSingleton;
+    use SingletonEx;
     public function foo()
     {
         //TODO log something.
