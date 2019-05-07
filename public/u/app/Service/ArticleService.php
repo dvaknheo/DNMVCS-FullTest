@@ -1,12 +1,11 @@
 <?php
 namespace UUU\Service;
-use DNMVCS as DN;
+use UUU\Base\BaseService;
+
 use UUU\Model as M;
 
-class ArticleService
+class ArticleService extends BaseService
 {
-	use \DNMVCS\DNSingleton;
-
 	public function getRecentArticle()
 	{
 		$ret=M\ArticleModel::G()->getList(1,10);

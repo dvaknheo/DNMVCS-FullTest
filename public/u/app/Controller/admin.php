@@ -1,5 +1,7 @@
 <?php
-use \DNMVCS\DNMVCS as DN;
+namespace UUU\Controller;
+
+use UUU\Base\ControllerHelper  as DN;
 use UUU\Service as S;
 use UUU\Service\AdminService;
 use UUU\Service\SessionService;

@@ -1,16 +1,17 @@
 <?php
 namespace UUU\Service;
-use \DNMVCS\DNMVCS as DN;
-use UUU\Model as M;
 
-class SessionService
+use UUU\Base\BaseService;
+use UUU\Base\ServiceHelper;
+use UUU\Base\App;
+
+class SessionService extends BaseService
 {
-	use \DNMVCS\DNSingleton;
 	// 注意这里是有状态的，和其他 Service 不同。
 	// 属于特殊的 Service
 	public function __construct()
 	{
-		DN::session_start();
+		App::session_start();
 	}
 	public function getCurrentUser()
 	{

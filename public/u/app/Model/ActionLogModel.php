@@ -1,13 +1,12 @@
 <?php
 namespace UUU\Model;
-use DNMVCS\DNMVCS as DN;
+use UUU\Base\ModelHelper as M;
 
 class ActionLogModel
 {
-	use \DNMVCS\DNSingleton;
 	public function log($action,$type='')
 	{
-		DN::DB()->insertData('ActionLogs',['contents'=>$action,'type'=>$type,'created_at'=>date('Y-m-d H:i:s')]);
+		M::DB()->insertData('ActionLogs',['contents'=>$action,'type'=>$type,'created_at'=>date('Y-m-d H:i:s')]);
 	}
 	public function get($id)
 	{
@@ -17,9 +16,9 @@ class ActionLogModel
 	{
 		$start=$page-1;
 		$sql="SELECT SQL_CALC_FOUND_ROWS  * from ActionLogs where true order by id desc limit $start,$page_size";
-		$data=DN::DB()->fetchAll($sql);
+		$data=M::DB()->fetchAll($sql);
 		$sql="SELECT FOUND_ROWS()";
-		$total=DN::DB()->fetchColumn($sql);
+		$total=M::DB()->fetchColumn($sql);
 		return array($data,$total);
 	}
 }

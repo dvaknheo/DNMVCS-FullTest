@@ -1,6 +1,6 @@
 <?php
 namespace UUU\Model;
-use DNMVCS\DNMVCS as DN;
+use UUU\Base\ModelHelper as M;
 
 class CommentModel extends BaseModel
 {
@@ -8,9 +8,9 @@ class CommentModel extends BaseModel
 	public function getListByArticle($article_id,int $page=1,int $page_size=10){
 		$start=$page-1;
 		$sql="SELECT SQL_CALC_FOUND_ROWS  * from {$this->table_name} where article_id=? and deleted_at is null order by id desc limit $start,$page_size";
-		$data=DN::DB()->fetchAll($sql,$article_id);
+		$data=M::DB()->fetchAll($sql,$article_id);
 		$sql="SELECT FOUND_ROWS()";
-		$total=DN::DB()->fetchColumn($sql);
+		$total=M::DB()->fetchColumn($sql);
 		return array($data,$total);
 	}
 	public function getList(int $page=1,int $page_size=10)
