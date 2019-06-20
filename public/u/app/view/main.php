@@ -23,7 +23,10 @@
 </ul>
 <?=$pager?>
 <pre>
-<?php var_export(get_included_files());?>
+<?php 
+$files=get_included_files();
+sort($files);
+var_export($files);?>
 </pre>
 <pre>
 <?php debug_print_backtrace(2);?>
