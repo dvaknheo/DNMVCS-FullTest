@@ -1,7 +1,7 @@
 <?php
 namespace MY\Base;
 
-use DNMVCS\Base\ControllerHelper as Helper;
+use DNMVCS\Base\C as Helper;
 
 class ControllerHelper extends Helper
 {
