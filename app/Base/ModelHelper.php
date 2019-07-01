@@ -1,7 +1,7 @@
 <?php
 namespace MY\Base;
 
-use DNMVCS\Base\M as Helper;
+use DNMVCS\Base\ModelHelper as Helper;
 
 class ModelHelper extends Helper
 {

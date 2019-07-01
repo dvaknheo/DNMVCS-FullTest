@@ -1,7 +1,7 @@
 <?php
 namespace UUU\Base;
 
-use DNMVCS\Base\S as Helper;
+use DNMVCS\Base\ServiceHelper as Helper;
 
 class ServiceHelper extends Helper
 {
