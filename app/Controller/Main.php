@@ -1,25 +1,34 @@
 <?php
 namespace MY\Controller;
 
-use DNMVCS\DNMVCS as DN;
-use MY\Service as S;
+use MY\Base\App as DN;
+use MY\Base\ControllerHelper as C;
 //use MY\Facades\Service\TestService;
 use MY\Service\TestService;
+use JsonRpc\MY\Service\TestService as XService;
+use DNMVCS\Ext\JsonRpcExt;
+
 class Main
 {
 	public function index()
 	{
-
+        $t=XService::G()->foo();
+        var_dump($t);
 //var_dump(DN::SG());var_dump(DATE(DATE_ATOM));exit;
 		//DN::ThrowOn(true,"JustError",123);
 		$data=array();
 		$data['var']=TestService::foo();
-		DN::Show($data,'main');
-		
+		C::Show($data,'main');
 	}
+    public function json_rpc()
+    {
+        
+        $ret= JsonRpcExt::G()->onRpcCall(DN::SG()->_POST);
+        C::ExitJson($ret);
+    }
 	public function i()
 	{
 		$data=array();
-		DN::Show($data);
+		C::Show($data);
 	}
 }
