@@ -5,14 +5,13 @@ use MY\Base\App as DN;
 use MY\Base\ControllerHelper as C;
 //use MY\Facades\Service\TestService;
 use MY\Service\TestService;
-use JsonRpc\MY\Service\TestService as XService;
 use DNMVCS\Ext\JsonRpcExt;
 
 class Main
 {
 	public function index()
 	{
-        $t=XService::G()->foo();
+        $t=TestService::G(JsonRpcExt::Wrap(TestService::class))->foo();
         var_dump($t);
 //var_dump(DN::SG());var_dump(DATE(DATE_ATOM));exit;
 		//DN::ThrowOn(true,"JustError",123);
