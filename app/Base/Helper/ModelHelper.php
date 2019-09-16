@@ -1,5 +1,5 @@
 <?php
-namespace UUU\Base;
+namespace MY\Base\Helper;
 
 use DNMVCS\Helper\ModelHelper as Helper;
 

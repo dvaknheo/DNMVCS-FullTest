@@ -4,7 +4,8 @@ use \DNMVCS\DNMVCS as DN;
 //require('inc.php');return;
 //chdir(__DIR__);
 require(__DIR__.'/../../headfile/headfile.php');
-
+use DNMVCS\SwooleHttpd\SwooleCoroutineSingleton;
+use DNMVCS\Core\SuperGlobal;
 $options=[
 	'path'=>__DIR__,
 	'namespace'=>'UUU',
@@ -17,23 +18,26 @@ $options=[
 	
 ];
 try{
-echo "aa\n\nn\n\n\<hr />\n\n\n";
-echo md5(spl_object_hash(DN::G()));
-
-echo "bbb<hr />\n";
-
+echo  "--------------------------------------------------\n";
+echo "[[[[[[[[[[[[[[[\n";
+//$func=DNMVCS_SUPER_GLOBAL_REPALACER;
+var_dump(SuperGlobal::G()->_SERVER['REQUEST_URI']);
+            
 DN::G()->init($options);
 echo md5(spl_object_hash(DN::G()));
-
-echo " ccc<hr />\n";
+echo "]]]]]]]]]]]]]]]\n";
 
 DN::G()->run();
-echo "ddd<hr />\n";
+echo "<pre>";
+echo SwooleCoroutineSingleton::DumpString();
+echo "</pre>";
+echo "dDDDDDDDDDRUNDDDDDDDDDDDDDDDDDDDDDDDDDDDdd<hr />\n";
 
 }catch(\Throwable $ex){
-var_dump($ex);
+echo $ex->getMessage();
+var_dump($ex->getTraceAsString());
 }
-echo "bb";
+echo "ALLLL END";
 
 return;
 var_dump(\DNMVCS\DNMVCS::SG()->_GET);

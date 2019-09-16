@@ -1,5 +1,5 @@
 <?php
-use DNMVCS\DNMVCS as DN;
+use MY\Base\Helper\ViewHelper as V;
 ?>
 <!doctype html>
 <html>
@@ -8,7 +8,7 @@ use DNMVCS\DNMVCS as DN;
 <h1>Hello DNMVCS</h1>
 <div>
 欢迎使用 DNMVCS.
-<?php DN::ShowBlock('inc-coroutine');?>
+<?php V::ShowBlock('inc-coroutine');?>
 
 <a href="/OneFile.php">“一个文件全部模式”</a>
 <a href="/u/index.php">“一个完整的文章系统”</a>
@@ -18,14 +18,14 @@ Time Now is <?php echo $var;?>
 </div>
 <?php // co:sleep(3);?>
 <hr/>
-<?php DN::ShowBlock('inc-static.php');?>
-<?php DN::ShowBlock('inc-function.php');?>
-<?php DN::ShowBlock('inc-backtrace');?>
-<?php DN::ShowBlock('inc-file');?>
+<?php V::ShowBlock('inc-static.php');?>
+<?php V::ShowBlock('inc-function.php');?>
+<?php V::ShowBlock('inc-backtrace');?>
+<?php V::ShowBlock('inc-file');?>
 
-<?php DN::ShowBlock('inc-superglobal');?>
+<?php V::ShowBlock('inc-superglobal');?>
 
-<?php DN::ShowBlock('inc-coroutine');?>
+<?php V::ShowBlock('inc-coroutine');?>
 
 </body>
 </html>

@@ -7,17 +7,17 @@ class App extends \DNMVCS\DNMVCS
 {
 	protected function onInit()
 	{
-        $this->options['ext']['Ext\FacadesAutoLoader']=[
+        $this->options['ext']['DNMVCS\Ext\FacadesAutoLoader']=[
             'facades_namespace'=>'Facades',
         ];
-        $this->options['ext']['Ext\JsonRpcExt']=[
+        $this->options['ext']['DNMVCS\Ext\JsonRpcExt']=[
             'jsonrpc_backend'=>['http://test.dnmvcs.dev/json_rpc','127.0.0.1:80'],
         ];
-		//return parent::init($options,$context);
+        return parent::onInit();
 	}
     protected function onRun()
     {
-       
+       return parent::onInit();
     }
 	public static function ST()
 	{
