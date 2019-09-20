@@ -17,7 +17,7 @@ class App extends \DNMVCS\DNMVCS
 	}
     protected function onRun()
     {
-       return parent::onInit();
+       return parent::onRun();
     }
 	public static function ST()
 	{
