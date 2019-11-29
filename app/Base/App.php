@@ -13,6 +13,9 @@ class App extends \DNMVCS\DNMVCS
         $this->options['ext']['DNMVCS\Ext\JsonRpcExt']=[
             'jsonrpc_backend'=>['http://test.dnmvcs.dev/json_rpc','127.0.0.1:80'],
         ];
+        $this->options['error_500']='_sys/error-500';
+        $this->options['error_exception']='_sys/error-exception';
+        $this->options['error_debug']='_sys/error-debug';
         return parent::onInit();
 	}
     protected function onRun()

@@ -1,5 +1,7 @@
 <?php
 use \DNMVCS\DNMVCS as DN;
+@session_start();
+
 //var_dump("OK");exit;
 //require('inc.php');return;
 //chdir(__DIR__);

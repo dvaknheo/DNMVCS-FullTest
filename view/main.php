@@ -15,8 +15,15 @@ use MY\Base\Helper\ViewHelper as V;
 路由方式，子目录的路由
 
 Time Now is <?php echo $var;?>
+<div><?=$html_pager?></div>
 </div>
-<?php // co:sleep(3);?>
+<pre>
+<?php
+$server=DNMVCS\SwooleHttpd\SwooleHttpd::Server();
+var_dump($server);
+// co:sleep(3);?>
+
+</pre>
 <hr/>
 <?php V::ShowBlock('inc-static.php');?>
 <?php V::ShowBlock('inc-function.php');?>

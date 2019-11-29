@@ -11,6 +11,7 @@ class SessionService extends BaseService
 	// 属于特殊的 Service
 	public function __construct()
 	{
+        //session_start();
 		App::session_start();
 	}
 	public function getCurrentUser()

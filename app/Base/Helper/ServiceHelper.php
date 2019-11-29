@@ -1,7 +1,7 @@
 <?php
-namespace MY\Helper;
+namespace MY\Base\Helper;
 
-use DNMVCS\Base\Helper\ServiceHelper as Helper;
+use DNMVCS\Helper\ServiceHelper as Helper;
 
 class ServiceHelper extends Helper
 {

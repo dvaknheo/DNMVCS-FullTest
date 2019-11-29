@@ -1,6 +1,7 @@
 <?php
 namespace UUU\Base;
-use \DNMVCS\DNMVCS as DN;
+use DNMVCS\DNMVCS as DN;
+use DNMVCS\Core\Route;
 
 class App extends \DNMVCS\DNMVCS
 {
@@ -11,14 +12,13 @@ class App extends \DNMVCS\DNMVCS
 		]);
 		
 		$this->assignRoute([
-			'~abc(\d*)'=>function($x){var_dump("work",$x);},
+			'~abc(\d*)'=>function(){var_dump(DN::Parameters());},
 		]);
-
-		return $this;
+		return parent::onInit();
 	}
-	public function run()
+	public function onRun()
 	{
-		return parent::run();
+		return parent::onRun();
 	}
 
 }
